@@ -30,7 +30,7 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="py-16 bg-black">
+    <section id="contact" className="py-16 bg-black snap-start">
       <div className="container-custom">
         <h2 className="text-3xl font-light text-blue-300 text-center mb-12">Contact Us</h2>
         

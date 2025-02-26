@@ -4,9 +4,8 @@ import FinanceBackground from '@/components/ui/FinanceBackground';
 
 const ImpactFundSection = () => {
   return (
-    <section className="py-16 bg-black relative">
-      {/* Finance background with reduced opacity */}
-      <FinanceBackground className="opacity-30" />
+    <section id="impact-fund" className="py-16 bg-black relative snap-start">
+      {/* We don't need additional FinanceBackground here as it's already in the Hero section */}
       
       <div className="container-custom text-center relative z-10">
         <div className="max-w-3xl mx-auto">

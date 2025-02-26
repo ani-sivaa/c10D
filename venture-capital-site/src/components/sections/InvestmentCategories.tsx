@@ -1,7 +1,6 @@
 "use client";
 
 import CategoryCard from '@/components/ui/CategoryCard';
-import FinanceBackground from '@/components/ui/FinanceBackground';
 
 const categories = [
   {
@@ -23,9 +22,8 @@ const categories = [
 
 const InvestmentCategories = () => {
   return (
-    <section className="py-16 bg-black relative">
-      {/* Finance background with low opacity */}
-      <FinanceBackground className="opacity-20" />
+    <section id="categories" className="py-16 bg-black relative snap-start">
+      {/* We're now using the single FinanceBackground from the Hero section */}
       
       <div className="container-custom relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">

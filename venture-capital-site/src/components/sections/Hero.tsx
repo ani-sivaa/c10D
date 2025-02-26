@@ -1,22 +1,17 @@
 "use client";
 
-
-
-import TriangleShape from '@/components/TriangleShape';
-import SvgCurve from '@/components/ui/SvgCurve';
-import FinanceBackground from '@/components/ui/FinanceBackground';
+import Background from '@/components/ui/Background'; // Make sure to create the Background.tsx file
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-black">
-      {/* Left triangle shape */}
-      <TriangleShape />
+    <section id="home" className="relative min-h-screen flex items-center overflow-visible bg-black snap-start">
+      {/* Background with debugging enabled */}
+      <Background />
       
-      {/* Finance-themed background */}
-      <FinanceBackground className="z-0" />
+      {/* Left triangle shape - Make sure z-index is higher than background */}
+      <div className="absolute top-0 left-0 w-1/3 h-full bg-gradient-to-br from-blue-900 to-blue-800 transform -skew-x-12 -translate-x-20 z-2"></div>
       
-      
-      
+      {/* Content */}
       <div className="container-custom relative z-10 pt-24">
         <div className="max-w-3xl">
           <h1 className="mb-4">
@@ -38,14 +33,14 @@ const Hero = () => {
           <div className="mt-16 flex items-center space-x-4">
             {/* Placeholder for Duke logo */}
             <div className="w-12 h-12 text-blue-600 font-bold text-2xl">
-              Duke
+              D
             </div>
             
             <span className="text-xl">x</span>
             
             {/* Placeholder for UNC logo */}
             <div className="w-12 h-12 text-blue-400 font-bold text-2xl">
-              UNC
+              NC
             </div>
           </div>
         </div>
@@ -53,6 +48,5 @@ const Hero = () => {
     </section>
   );
 };
-
 
 export default Hero;
