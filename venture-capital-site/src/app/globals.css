@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-rgb: 0, 0, 0;
+  --primary-blue: #0047AB;
+  --primary-light-blue: #4B9CD3;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+}
+
+@layer components {
+  .container-custom {
+    @apply container mx-auto px-4 md:px-8 max-w-7xl;
+  }
+  
+  .section-padding {
+    @apply py-12 md:py-16 lg:py-20;
+  }
+  
+  .gradient-bg {
+    background: linear-gradient(135deg, #000000 0%, #0c1d3d 100%);
+  }
+  
+  .heading-xl {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold italic;
+  }
+  
+  .heading-lg {
+    @apply text-3xl md:text-4xl font-bold;
+  }
+  
+  .heading-md {
+    @apply text-2xl md:text-3xl font-bold;
+  }
+  
+  .text-blue-accent {
+    color: var(--primary-blue);
+  }
+  
+  .text-light-blue {
+    color: var(--primary-light-blue);
+  }
+}
