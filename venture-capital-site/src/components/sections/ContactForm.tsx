@@ -52,7 +52,7 @@ const ContactForm = () => {
             <span className="text-cyan-400">Get</span> in Touch
           </h2>
           <p className="text-gray-400 text-center mb-12 max-w-xl mx-auto">
-            Have questions about C10D? We're here to help. Reach out to us below.
+            Have questions about C10D? We&apos;re here to help. Reach out to us below.
           </p>
           
           <div className="bg-black/40 backdrop-blur-md border border-blue-900/20 rounded-xl overflow-hidden shadow-xl">
@@ -165,8 +165,10 @@ const ContactForm = () => {
                 {/* Inspirational message overlay instead of contact info */}
                 <div className="absolute inset-0 z-20 flex flex-col justify-end p-8">
                   <div className="text-white space-y-6">
-                    <h3 className="text-xl font-light text-cyan-400">Let's Connect</h3>
-                    <p className="text-sm text-gray-300">Have a question or want to join C10D? We're excited to hear from you!</p>
+                    <h3 className="text-xl font-light text-cyan-400">Let&apos;s Connect
+                    </h3>
+                    <p className="text-sm text-gray-300">Have a question or want to join C10D? We&apos;re excited to hear from you!
+                    </p>
                   </div>
                 </div>
               </div>

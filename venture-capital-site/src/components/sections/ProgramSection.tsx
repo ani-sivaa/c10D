@@ -22,7 +22,7 @@ const ProgramSection = () => {
               <div className="text-blue-300 font-bold mb-2 text-lg">01 |</div>
               <h2 className="text-xl md:text-3xl text-white font-bold mb-3">DUKE x UNC Venture Capital Competition</h2>
               <p className="text-gray-200 text-base">
-                Powered by C10D & Kenan Flagler's Undergraduate VC Club
+                Powered by C10D & Kenan Flagler&apos;s Undergraduate VC Club
               </p>
             </div>
             
