@@ -28,7 +28,7 @@ export default function Background() {
     let animationTime = 0; // To track animation progress
     
     // Define VC-related emojis
-    const vcEmojis = ['💰', '💵', '💸', '📈', '📊', '💎', '🏦', '💻', '🚀', '💼'];
+    const vcEmojis = [''];
     
     const nodes: { 
       x: number; 
