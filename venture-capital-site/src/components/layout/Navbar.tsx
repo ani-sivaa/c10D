@@ -56,19 +56,8 @@ const Navbar = () => {
         </a>
         
         {/* Navigation Links */}
-        <div className="flex items-center space-x-8">
-          <a 
-            href="#programs" 
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToSection('programs');
-            }}
-            className={`text-sm hover:text-blue-400 transition ${
-              activeSection === 'programs' ? 'text-blue-400' : 'text-white'
-            }`}
-          >
-            About
-          </a>
+        
+          
           <a 
             href="#impact-fund" 
             onClick={(e) => {
@@ -94,7 +83,6 @@ const Navbar = () => {
             Contact
           </a>
         </div>
-      </div>
     </nav>
   );
 };
