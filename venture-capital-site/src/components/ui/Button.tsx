@@ -10,7 +10,7 @@ const Button: React.FC<ButtonProps> = ({
   type = 'button',
 }) => {
   // Base classes
-  let baseClasses = 'font-medium transition-colors duration-200';
+  const baseClasses = 'font-medium transition-colors duration-200';
 
   // Size classes
   const sizeClasses = {

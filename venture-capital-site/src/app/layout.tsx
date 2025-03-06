@@ -22,10 +22,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} bg-black text-white font-light`}>
+    <html lang="en" className="h-full">
+      <body className={`${inter.className} bg-black text-white font-light flex flex-col min-h-screen`}>
         <Navbar />
-        {children}
+        <main className="flex-grow">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

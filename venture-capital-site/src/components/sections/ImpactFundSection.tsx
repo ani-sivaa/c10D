@@ -1,6 +1,5 @@
 "use client";
 
-import FinanceBackground from '@/components/ui/FinanceBackground';
 
 const ImpactFundSection = () => {
   return (
