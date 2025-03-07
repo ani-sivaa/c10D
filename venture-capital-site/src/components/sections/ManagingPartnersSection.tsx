@@ -23,7 +23,7 @@ const ManagingPartnersSection = () => {
               />
               <h3 className="text-xl mb-2 text-white">Darsh Shah</h3>
               <p className="text-gray-300">
-                Darsh is a 2x founder, with a love for driving student innovation in every community he enters. His first startup was a "business hackathon" partnered with Berkeley,Haas and UCLA, and he's currently building another startup to democratize community driven investment in fintech. His passion for VC stems from his drive to support similar student founders
+                Darsh is a 2x founder, with a love for driving student innovation in every community he enters. His first startup was a "business hackathon" partnered with Berkeley,Haas and UCLA, and he&apos;s currently building another startup to democratize community driven investment in fintech. His passion for VC stems from his drive to support similar student founders
               </p>
             </div>
             

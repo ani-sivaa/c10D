@@ -4,14 +4,24 @@ import { useState, useEffect } from 'react';
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState('home');
+  const [showImpactFundPage, setShowImpactFundPage] = useState(false);
 
-  // Function to handle smooth scrolling
+  // Function to handle smooth scrolling and hide impact fund page
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
     setActiveSection(sectionId);
+    
+    // Hide the impact fund page when any button is clicked
+    setShowImpactFundPage(false);
+    
+    // Hide the impact fund page element
+    const impactFundPage = document.getElementById('impact-fund-page');
+    if (impactFundPage) {
+      impactFundPage.style.display = 'none';
+    }
   };
 
   // Update active section based on scroll position
@@ -19,7 +29,7 @@ const Navbar = () => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       
-      const sections = ['home', 'programs', 'impact-fund', 'categories', 'contact'];
+      const sections = ['home', 'programs', 'impact-fund', 'categories', 'partners', 'contact'];
       
       for (const section of sections) {
         const element = document.getElementById(section);
@@ -55,8 +65,7 @@ const Navbar = () => {
         </a>
         
         {/* Navigation Links */}
-        
-          
+        <div className="flex items-center space-x-8">
           <a 
             href="#impact-fund" 
             onClick={(e) => {
@@ -68,6 +77,18 @@ const Navbar = () => {
             }`}
           >
             Impact Fund
+          </a>
+          <a 
+            href="#partners" 
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection('partners');
+            }}
+            className={`text-sm hover:text-blue-400 transition ${
+              activeSection === 'partners' ? 'text-blue-400' : 'text-white'
+            }`}
+          >
+            Partners
           </a>
           <a 
             href="#contact" 
@@ -82,6 +103,7 @@ const Navbar = () => {
             Contact
           </a>
         </div>
+      </div>
     </nav>
   );
 };
