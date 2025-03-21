@@ -11,6 +11,11 @@ const ContactForm = () => {
   });
   
   const [focusedField, setFocusedField] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: 'success' | 'error' | null;
+    message: string;
+  }>({ type: null, message: '' });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -18,18 +23,41 @@ const ContactForm = () => {
       ...prev,
       [name]: value
     }));
+    // Clear status when user starts typing again
+    if (submitStatus.type) {
+      setSubmitStatus({ type: null, message: '' });
+    }
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsSubmitting(true);
     
-    // Create mailto link with form data
-    const subject = `C10D Contact Form: ${formData.name}`;
-    const body = `Name: ${formData.name}%0D%0A%0D%0AEmail: ${formData.email}%0D%0A%0D%0AMessage:%0D%0A${formData.message}`;
-    const mailtoLink = `mailto:darshah@unc.edu?subject=${encodeURIComponent(subject)}&body=${body}`;
-    
-    // Open the default email client
-    window.location.href = mailtoLink;
+    try {
+      // Create mailto link with form data
+      const subject = `C10D Contact Form: ${formData.name}`;
+      const body = `Name: ${formData.name}%0D%0A%0D%0AEmail: ${formData.email}%0D%0A%0D%0AMessage:%0D%0A${formData.message}`;
+      const mailtoLink = `mailto:darshah@unc.edu?subject=${encodeURIComponent(subject)}&body=${body}`;
+      
+      // Open the default email client
+      window.location.href = mailtoLink;
+      
+      // Show success message
+      setSubmitStatus({
+        type: 'success',
+        message: 'Your email client has been opened with the message. Thank you for reaching out!'
+      });
+      
+      // Reset form
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      setSubmitStatus({
+        type: 'error',
+        message: 'There was an error opening your email client. Please try again or email us directly at darshah@unc.edu'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -59,6 +87,14 @@ const ContactForm = () => {
             <div className="grid grid-cols-1 md:grid-cols-5 gap-0">
               {/* Form column */}
               <div className="p-8 md:p-10 col-span-3 relative">
+                {submitStatus.type && (
+                  <div className={`mb-6 p-4 rounded ${
+                    submitStatus.type === 'success' ? 'bg-green-900/20 text-green-400' : 'bg-red-900/20 text-red-400'
+                  }`}>
+                    {submitStatus.message}
+                  </div>
+                )}
+                
                 <form className="space-y-6" onSubmit={handleSubmit}>
                   <div className="relative group">
                     <input 
@@ -137,13 +173,28 @@ const ContactForm = () => {
                   <div className="pt-4">
                     <button 
                       type="submit" 
-                      className="group relative overflow-hidden rounded-md px-6 py-4 bg-black border border-blue-600/40 text-white font-medium transition-all hover:border-cyan-400/70 hover:shadow-lg hover:shadow-cyan-400/20 w-full"
+                      disabled={isSubmitting}
+                      className={`group relative overflow-hidden rounded-md px-6 py-4 bg-black border border-blue-600/40 text-white font-medium transition-all hover:border-cyan-400/70 hover:shadow-lg hover:shadow-cyan-400/20 w-full ${
+                        isSubmitting ? 'opacity-70 cursor-not-allowed' : ''
+                      }`}
                     >
                       <span className="relative z-10 flex items-center justify-center gap-2">
-                        <span>Send Message</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                        </svg>
+                        {isSubmitting ? (
+                          <>
+                            <svg className="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                            <span>Sending...</span>
+                          </>
+                        ) : (
+                          <>
+                            <span>Send Message</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                            </svg>
+                          </>
+                        )}
                       </span>
                       <div className="absolute inset-0 w-0 bg-gradient-to-r from-blue-600 to-cyan-500 transition-all duration-300 ease-out group-hover:w-full"></div>
                     </button>
@@ -181,3 +232,4 @@ const ContactForm = () => {
 };
 
 export default ContactForm;
+

@@ -2,28 +2,20 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 const ImpactFundPage = () => {
+  const router = useRouter();
+
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-black text-white pt-24">
       {/* Navigation */}
-      <header className="py-6 px-8">
-        <nav className="flex justify-between items-center">
+      <header className="fixed top-0 left-0 w-full z-50 py-6 px-8 bg-black bg-opacity-80 backdrop-blur-sm">
+        <nav className="container mx-auto flex justify-between items-center">
           <div className="flex items-center space-x-12">
-            <Link href="/" className="text-blue-400 font-semibold text-xl">
+            <Link href="/" className="text-blue-400 font-light text-lg hover:text-cyan-400 transition-colors">
               C10D
             </Link>
-            <div className="hidden md:flex space-x-8">
-              <Link href="/about" className="text-white hover:text-blue-300 transition">
-                About
-              </Link>
-              <Link href="/contact" className="text-white hover:text-blue-300 transition">
-                Contact
-              </Link>
-              <Link href="/overview" className="text-white hover:text-blue-300 transition">
-                Overview
-              </Link>
-            </div>
           </div>
           <div className="flex items-center space-x-4">
             <Image
@@ -46,19 +38,19 @@ const ImpactFundPage = () => {
       </header>
 
       {/* Hero Section */}
-      <main className="px-8 py-16 md:px-16">
+      <main className="container mx-auto px-8 py-16">
         <div className="max-w-5xl">
-          <div className="mb-2">The C10D</div>
+          <div className="mb-2 text-gray-400">The C10D</div>
           <h1 className="text-4xl md:text-6xl text-blue-400 font-light italic mb-8">
             Impact Fund
           </h1>
 
-          <p className="text-lg mb-10 max-w-3xl">
+          <p className="text-lg mb-10 max-w-3xl text-gray-200">
             A cross-campus fund for Duke & UNC's sharpest investors. No fluff—just real
             opportunities to scout, invest, and lead.
           </p>
 
-          <ul className="space-y-4 mb-12 max-w-3xl">
+          <ul className="space-y-4 mb-12 max-w-3xl text-gray-300">
             <li className="flex items-start">
               <span className="text-blue-400 mr-3">•</span>
               <span>Select student partners run specific industry sectors</span>
@@ -81,15 +73,22 @@ const ImpactFundPage = () => {
             </li>
           </ul>
 
-          <a
-            href="#apply"
-            className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-8 rounded transition-colors"
-          >
-            Apply as a Partner
-          </a>
+          <div className="flex space-x-4">
+            <Link
+              href="/#contact"
+              className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-8 rounded transition-colors"
+            >
+              Apply as a Partner
+            </Link>
+            <Link
+              href="/"
+              className="inline-block border border-blue-400 text-blue-400 hover:bg-blue-400/10 font-medium py-3 px-8 rounded transition-colors"
+            >
+              Back to Home
+            </Link>
+          </div>
         </div>
       </main>
-
     
     </div>
   );

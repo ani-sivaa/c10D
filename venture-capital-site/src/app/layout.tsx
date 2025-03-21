@@ -4,7 +4,6 @@ import { Inter } from 'next/font/google';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 
-// Load Inter with lighter font weights
 const inter = Inter({ 
   subsets: ['latin'],
   weight: ['300', '400', '500'],
@@ -12,8 +11,20 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'The Future of Venture Capital @ Duke & UNC',
-  description: 'C10D Impact Venture Fund and Duke x UNC Venture Capital Competition',
+  title: 'C10D - The Future of Venture Capital @ Duke & UNC',
+  description: 'C10D is a premier venture capital program bridging Duke and UNC, offering hands-on investment experience through our Impact Fund and VC Competition.',
+  keywords: 'venture capital, Duke, UNC, impact fund, student investors, startup investment',
+  openGraph: {
+    title: 'C10D - The Future of Venture Capital @ Duke & UNC',
+    description: 'Join the premier venture capital program bridging Duke and UNC.',
+    images: ['/images/team-photo.jpg'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'C10D - The Future of Venture Capital @ Duke & UNC',
+    description: 'Join the premier venture capital program bridging Duke and UNC.',
+    images: ['/images/team-photo.jpg'],
+  },
 };
 
 export default function RootLayout({
@@ -22,8 +33,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="h-full">
-      <body className={`${inter.className} bg-black text-white font-light flex flex-col min-h-screen`}>
+    <html lang="en" className="h-full scroll-smooth">
+      <body className={`${inter.className} bg-black text-white font-light flex flex-col min-h-screen antialiased`}>
         <Navbar />
         <main className="flex-grow">
           {children}

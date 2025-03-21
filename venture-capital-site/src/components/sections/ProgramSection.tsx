@@ -1,8 +1,9 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 const ProgramSection = () => {
   return (
-    <section className="py-16 sm:py-20 bg-black">
+    <section id="program" className="py-16 sm:py-20 bg-black">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Left side - Image */}
@@ -20,10 +21,14 @@ const ProgramSection = () => {
           <div className="flex flex-col justify-center space-y-12 p-4 sm:p-6">
             <div className="transform hover:scale-105 transition duration-300">
               <div className="text-blue-400 font-bold mb-3 text-xl tracking-wider">01 |</div>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl text-white font-extrabold mb-4 leading-tight">DUKE x UNC Venture Capital Competition</h2>
-              <p className="text-gray-300 text-lg font-medium">
-                Powered by C10D & Kenan Flagler&apos;s Undergraduate VC Club
-              </p>
+              <Link href="/competition" className="group">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl text-white font-extrabold mb-4 leading-tight group-hover:text-blue-400 transition-colors">
+                  DUKE x UNC Venture Capital Competition
+                </h2>
+                <p className="text-gray-300 text-lg font-medium">
+                  Powered by C10D & Kenan Flagler&apos;s Undergraduate VC Club
+                </p>
+              </Link>
             </div>
             
             <div className="transform hover:scale-105 transition duration-300">

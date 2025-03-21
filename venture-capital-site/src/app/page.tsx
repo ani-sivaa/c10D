@@ -1,7 +1,6 @@
 import Hero from '@/components/sections/Hero';
 import ProgramSection from '@/components/sections/ProgramSection';
 import ImpactFundSection from '@/components/sections/ImpactFundSection';
-import InvestmentCategories from '@/components/sections/InvestmentCategories';
 import ManagingPartnersSection from '@/components/sections/ManagingPartnersSection';
 import ContactForm from '@/components/sections/ContactForm';
 
@@ -17,8 +16,7 @@ export default function Home() {
       {/* Impact Fund Section */}
       <ImpactFundSection />
       
-      {/* Investment Categories */}
-      <InvestmentCategories />
+
       
       {/* Managing Partners Section */}
       <ManagingPartnersSection />
