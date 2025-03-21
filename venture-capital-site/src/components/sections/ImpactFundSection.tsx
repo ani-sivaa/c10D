@@ -36,13 +36,15 @@ const ImpactFundSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl md:text-5xl font-light text-blue-400 leading-tight mb-2">
-              The C10D
-            </h2>
-            
-            <p className="text-4xl md:text-5xl italic font-light mb-8 text-blue-400">
-              Impact Venture Fund
-            </p>
+            <Link href="/impact-fund" className="group block hover:opacity-90 transition-opacity">
+              <h2 className="text-4xl md:text-5xl font-light text-blue-400 leading-tight mb-2 group-hover:text-cyan-400 transition-colors">
+                The C10D
+              </h2>
+              
+              <p className="text-4xl md:text-5xl italic font-light mb-8 text-blue-400 group-hover:text-cyan-400 transition-colors">
+                Impact Venture Fund
+              </p>
+            </Link>
             
             <div className="bg-black/30 p-6 rounded-lg border border-blue-500/20 max-w-3xl mx-auto backdrop-blur-sm">
               <p className="text-gray-200 leading-relaxed">
