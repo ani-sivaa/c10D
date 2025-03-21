@@ -33,10 +33,14 @@ const ProgramSection = () => {
             
             <div className="transform hover:scale-105 transition duration-300">
               <div className="text-blue-400 font-bold mb-3 text-xl tracking-wider">02 |</div>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl text-white font-extrabold mb-4 leading-tight">C10D Impact Venture Fund</h2>
-              <p className="text-gray-300 text-lg font-medium">
-                Join C10D as an inaugural partner or associate and manage the premier impact VC fund in the RTP
-              </p>
+              <Link href="/impact-fund" className="group">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl text-white font-extrabold mb-4 leading-tight group-hover:text-blue-400 transition-colors">
+                  C10D Impact Venture Fund
+                </h2>
+                <p className="text-gray-300 text-lg font-medium">
+                  Join C10D as an inaugural partner or associate and manage the premier impact VC fund in the RTP
+                </p>
+              </Link>
             </div>
           </div>
         </div>

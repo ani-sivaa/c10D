@@ -36,17 +36,29 @@ const ImpactFundSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <Link href="/impact-fund" className="group block hover:opacity-90 transition-opacity">
-              <h2 className="text-4xl md:text-5xl font-light text-blue-400 leading-tight mb-2 group-hover:text-cyan-400 transition-colors">
-                The C10D
-              </h2>
-              
-              <p className="text-4xl md:text-5xl italic font-light mb-8 text-blue-400 group-hover:text-cyan-400 transition-colors">
-                Impact Venture Fund
-              </p>
+            <Link 
+              href="/impact-fund" 
+              className="group inline-block p-6 rounded-xl hover:bg-blue-900/10 transition-all duration-300"
+            >
+              <div className="flex flex-col items-center">
+                <h2 className="text-4xl md:text-5xl font-light text-blue-400 leading-tight mb-2 group-hover:text-cyan-400 transition-colors">
+                  The C10D
+                </h2>
+                
+                <p className="text-4xl md:text-5xl italic font-light mb-4 text-blue-400 group-hover:text-cyan-400 transition-colors">
+                  Impact Venture Fund
+                </p>
+
+                <div className="flex items-center gap-2 text-blue-400 group-hover:text-cyan-400 transition-colors opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0">
+                  <span className="text-sm">Learn More</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </div>
+              </div>
             </Link>
             
-            <div className="bg-black/30 p-6 rounded-lg border border-blue-500/20 max-w-3xl mx-auto backdrop-blur-sm">
+            <div className="bg-black/30 p-6 rounded-lg border border-blue-500/20 max-w-3xl mx-auto backdrop-blur-sm mt-6">
               <p className="text-gray-200 leading-relaxed">
                 To bridge Duke and UNC's entrepreneurial spirit, driving impactful change through strategic investments in visionary ventures
               </p>
